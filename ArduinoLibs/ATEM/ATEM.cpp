@@ -189,7 +189,7 @@ void ATEM::runLoop() {
 				}
 				
 				if (!(headerBitmask & ATEM_headerCmd_HelloPacket) && packetLength>12)	{
-					_parsePacket(packetLength);
+					_parsePacket(_packetBuffer);
 				}
 		    } else {
 				if (_serialOutput & 0x80) 	{
